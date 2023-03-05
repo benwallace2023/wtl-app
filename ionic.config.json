@@ -1,0 +1,7 @@
+{
+  "name": "wtl-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

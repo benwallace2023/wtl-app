@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title >Transportion Of ?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="conditions">
+    In order to avoid any misunderstanding , please read carefully the therms of conditions before starting
+    <ion-button (click)="toTheConditions()" color="danger">Conditions</ion-button>
+  </div>
+
+  <form [formGroup]="form">
+
+ <ion-card class="anm">
+  <ion-card-header>
+    <ion-card-title>Home appliance</ion-card-title>
+  </ion-card-header>
+       <ion-card-content >
+        <ion-list>
+          <ion-item>
+            <ion-label>TVs</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Small Fridge</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Big Fridge</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Washing Machine</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dish Washer</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Oven</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Micro Wave</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+        </ion-list>
+        
+      </ion-card-content> 
+ </ion-card>
+ 
+ <ion-card class="anf">
+  <ion-card-header>
+    <ion-card-title>Furniture</ion-card-title>
+  </ion-card-header>
+       <ion-card-content >
+        <ion-list>
+          <ion-item>
+            <ion-label>Sofa</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Table</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Chair</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Bed</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Wardrobe</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dresser</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Mattress</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Carpet</ion-label>
+            <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+          </ion-item>
+        </ion-list>
+        
+        <ion-card class="anp">
+          <ion-card-header>
+            <ion-card-title>Packages</ion-card-title>
+              </ion-card-header>
+               <ion-card-content >
+                <ion-list>
+                  <ion-item>
+                    <ion-label>Small size</ion-label>
+                    <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Big size</ion-label>
+                    <ion-input  type="number"(ionFocus)="selectAllText($event)" [(ngModel)]="inputValue" placeholder="000"></ion-input>
+                  </ion-item>                
+                </ion-list>
+            </ion-card-content>    
+        </ion-card>
+        <ion-card class="ana">
+          <ion-card-header>
+            <ion-card-title>Others</ion-card-title>
+          </ion-card-header>
+               <ion-card-content >
+                <!-- the pics must be uploaded on this area -->
+               </ion-card-content>    
+ </ion-card>
+
+    <ion-button color="success" size="full" (click)="login()">Submit</ion-button>
+         By clicking the button you agree with the terms & conditions
+ </form>
+</ion-content>

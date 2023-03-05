@@ -1,0 +1,18 @@
+ion-button[color="dark"]{
+    text-transform: initial;
+}
+
+ion-card-header{
+     background-color: rgb(243, 167, 53);
+}
+
+ion-card-content{
+    background-color: rgb(3, 2, 78);
+    padding-top: 20px;
+}
+.vertical-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }

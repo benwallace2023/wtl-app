@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="Primary">
+    <ion-title>contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card>
+  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <ion-card-header>
+    <ion-card-title>Contact</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+  <form [formGroup]="form">
+   <h2>Need specific information? Contact us</h2> 
+   <ion-textarea label="Solid textarea" labelPlacement="floating" fill="solid" placeholder="Enter text"></ion-textarea>
+   <ion-button color="Light"  (click)="SubmitText()">Submit</ion-button>
+  </form>
+
+  </ion-card-content>
+  
+  <ion-card-content>
+   <h2>Address</h2> 
+  <p>Immeuble T-Bella</p>
+  <p>Independance street</p>
+  <p>35416, Fulda, Deutschland</p>
+  </ion-card-content>
+
+  <ion-card-content>
+    <h2>Call now</h2> 
+   <p>business Hours: Mon-Fri:	8:00 AM - 5:00 PM</p>
+   <p>+237 696586925</p>
+   <p>+237 677564929</p>
+   <p>+237 233649290</p>
+   </ion-card-content>
+</ion-card>

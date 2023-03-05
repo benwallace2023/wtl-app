@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title >Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <form [formGroup]="form">
+
+  <ion-card class="anm">
+   <ion-card-header>
+<ion-card-title>I am</ion-card-title>
+   </ion-card-header>
+   <ion-card-content>
+   <ion-radio-group>
+
+    <ion-item>
+      <ion-label>private</ion-label>
+      <ion-radio value="client" slot="start"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>company</ion-label>
+      <ion-radio value="partner" slot="start"></ion-radio>
+    </ion-item>
+   </ion-radio-group>
+  </ion-card-content>
+ </ion-card>
+
+ <ion-card class="anm">
+  <ion-card-header>
+    <ion-card-title>Contact</ion-card-title>
+  </ion-card-header>
+       <ion-card-content>
+        <ion-item>
+          <ion-radio-group lines="full">
+            <ion-list-header>
+              <ion-label>Gender</ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-label>Mr.</ion-label>
+              <ion-radio slot="start" value="male" checked></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Mrs.</ion-label>
+              <ion-radio slot="start" value="female"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Full Name</ion-label>
+          <ion-input formControlName="name" type="text"> </ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('name')?.touched && form.get('name')?.errors"> Name not valid</ion-label>
+      <ion-label color="danger" *ngIf="form.get('name')?.touched && form.get('name')?.errors?.['required']"> (Name required)</ion-label>
+  
+
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input  formControlName="email" type="email"> </ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors"> E-mail not valid</ion-label>
+        <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']"> (E-Mail required)</ion-label>
+    
+
+        <ion-item lines="full">
+          <ion-label position="floating">Date of Birth</ion-label>
+          <ion-datetime (ionChange)="getDate($event)" formControlName="dob" [value]="defaultDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Mobile</ion-label>
+          <ion-input formControlName="mobile" type="text" required></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('mobile')?.touched && form.get('mobile')?.errors"> not valid</ion-label>
+        <ion-label color="danger" *ngIf="form.get('mobile')?.touched && form.get('mobile')?.errors?.['required']"> (E-Mail required)</ion-label>
+  
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password"> </ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors"> password not valid</ion-label>
+        <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['minlength']"> (minimum 8 Chars)</ion-label>
+    
+
+        <ion-item>
+          <ion-label position="floating">Password confirmation</ion-label>
+          <ion-input type="repeatPassword"> </ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('repeatPassword')?.touched && form.get('repeatPassword')?.errors?.['isntMatching']"></ion-label>
+    
+       
+      </ion-card-content>
+ </ion-card>
+
+
+ <ion-card class="anm">
+  <ion-card-header>
+    <ion-card-title>Address Information</ion-card-title>
+  </ion-card-header>
+       <ion-card-content formgroupName>
+        <ion-item>
+          <ion-label position="floating">street</ion-label>
+          <ion-input formControlName="Street" type="text"> </ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">number</ion-label>
+          <ion-input formControlName="Number" type="tel"> </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">ZipCode</ion-label>
+          <ion-input formControlName="ZipCode" type="tel"> </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">District</ion-label>
+          <ion-input formControlName="District"  type="text"> </ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('address').get('District')?.touched && form.get('address').get('District')?.errors"> District not valid</ion-label>
+        <ion-label color="danger" *ngIf="form.get('address').get('District')?.touched && form.get('address').get('District')?.errors?.['required']"> (District required)</ion-label>
+    
+
+        <ion-item>
+          <ion-label position="floating">Town</ion-label>
+          <ion-input formControlName="Town" type="text"> </ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('address').get('Town')?.touched && form.get('address').get('Town')?.errors"> Town not valid</ion-label>
+        <ion-label color="danger" *ngIf="form.get('address').get('Town')?.touched && form.get('address').get('Town')?.errors?.['required']"> (Town required)</ion-label>
+    
+      </ion-card-content>
+
+      
+     
+ </ion-card>
+ 
+    <ion-button color="success" size="full" (click)="login()">Submit</ion-button>
+
+ </form>
+</ion-content>

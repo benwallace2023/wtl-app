@@ -1,0 +1,35 @@
+ <ion-card>
+  <ion-card-header >
+    <div class="vertical-center">
+      <div class="center">
+     <img src="assets/logo_wtl.JPG" alt ="image_de_wtl" >
+    </div>
+  </div>
+   </ion-card-header>
+
+  <ion-card-content >
+    <form [formGroup]="form"> 
+    <div class="regi">
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="mail" slot="start"></ion-icon> E-mail </ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors"> E-mail not valid</ion-label>
+      <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']"> (E-Mail required)</ion-label>
+      
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="key" slot="start"></ion-icon> Passwort </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors">Password not valid</ion-label>
+      <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['minlength']">(minimum 8 Chars)</ion-label>
+
+      <ion-button color="tertiary" fill="clear" size="full" [disabled]="!form.get('email')?.valid" 
+      (click)="forgotEmailPassword()" id="recoverPasswordButton" > email/Password forgot ?</ion-button>
+      <ion-button color="success" size="full" (click)="login()" [disabled]="!form.valid" id="loginButton"> loggin</ion-button>
+      <ion-button color="tertiary" fill="clear" size="full" (click)="register()"> sign Up</ion-button>
+
+    </div>
+   </form>
+  </ion-card-content>
+</ion-card>
